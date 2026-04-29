@@ -1,5 +1,8 @@
 {
   "rewrites": [
-    { "source": "/api/omie", "destination": "/omie.js" }
+    {
+      "source": "/api/omie",
+      "destination": "/omie.js"
+    }
   ]
 }
