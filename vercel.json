@@ -1,8 +1,5 @@
 {
   "functions": {
-    "API/omie.js": { "maxDuration": 30 }
-  },
-  "rewrites": [
-    { "source": "/api/omie", "destination": "/API/omie.js" }
-  ]
+    "api/omie.js": { "maxDuration": 30 }
+  }
 }
