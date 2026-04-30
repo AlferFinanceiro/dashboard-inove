@@ -1,202 +1,1163 @@
-ALFER
-Gestão Financeira Estratégica
-Dashboard — Grupo Inove
-Demo
-🔍 Diagnóstico
-⚙ Configurar
-ERRO GERAL: Failed to fetch
-Este Mês
-Trimestre
-Ano
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Financeiro — Grupo Inove</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --verde:        #2A542D;
+  --verde-hover:  #3a7a3e;
+  --lima:         #B5CA56;
+  --lima-claro:   #dceaaa;
+  --bg:           #f2f5ee;
+  --card:         #ffffff;
+  --texto:        #1a2e1b;
+  --leve:         #6b7c6c;
+  --border:       #dde8dd;
+  --danger:       #c0392b;
+  --danger-bg:    #fdf2f1;
+  --warn:         #d97706;
+  --warn-bg:      #fffbeb;
+  --blue:         #2563eb;
+  --blue-bg:      #eff6ff;
+  --shadow:       0 2px 14px rgba(42,84,45,0.07);
+  --shadow-md:    0 4px 24px rgba(42,84,45,0.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--texto);min-height:100vh}
 
-abril de 2026
-⚠ Dados de demonstração
-Atualizar
-Todas
-🏭 LS Gôndolas
-🏗 Inove Gôndolas
-🔩 DL Indústria
-📥
-Receita Recebida
-R$ 262.400,00
-6 recebimentos
-📋
-A Receber (Aberto)
-R$ 83.200,00
-4 em aberto
-📤
-A Pagar no Mês
-R$ 134.200,00
-8 contas
-🚨
-Total em Atraso
-R$ 242.100,00
-7 clientes · 8 fornecedores
-🏭 LS Gôndolas
-Recebido
-R$ 50.500,00
-A Receber
-R$ 24.000,00
-A Pagar
-R$ 68.400,00
-🏗 Inove Gôndolas
-Recebido
-R$ 183.000,00
-A Receber
-R$ 43.500,00
-A Pagar
-R$ 39.600,00
-🔩 DL Indústria
-Recebido
-R$ 28.900,00
-A Receber
-R$ 15.700,00
-A Pagar
-R$ 26.200,00
-🚨 Clientes em Atraso
-7
-Total: R$ 107.900,00
-Makro Atacadista
-INOVE
-Venda de Gôndolas
-Venc: 22/04/2026
-8d
-R$ 43.500,00
-Fábrica de Móveis Alfa
-DL
-Venda de Peças
-Venc: 20/04/2026
-10d
-R$ 15.700,00
-Distribuidora Central
-LS
-Venda de Gôndolas
-Venc: 25/04/2026
-5d
-R$ 14.200,00
-Coop Cooperativa
-INOVE
-Serviços de Montagem
-Venc: 10/03/2026
-51d
-R$ 12.300,00
-Rede Varejo Sul
-LS
-Serviços de Montagem
-Venc: 18/04/2026
-12d
-R$ 9.800,00
-Mercado Grande SP
-LS
-Venda de Gôndolas
-Venc: 15/03/2026
-46d
-R$ 7.600,00
-Metalúrgica São Paulo
-DL
-Venda de Peças
-Venc: 05/03/2026
-56d
-R$ 4.800,00
-⚠️ Contas a Pagar em Atraso
-8
-Total: R$ 134.200,00
-LS Gôndolas (Aporte)
-LS
-Aporte DL
-Venc: 05/04/2026
-25d
-R$ 50.000,00
-Matéria Prima Brasil
-INOVE
-Matéria Prima
-Venc: 15/04/2026
-15d
-R$ 34.000,00
-Chapa e Ferro Nacional
-DL
-Matéria Prima
-Venc: 12/04/2026
-18d
-R$ 19.800,00
-Aço e Arame SA
-LS
-Matéria Prima
-Venc: 10/04/2026
-20d
-R$ 12.500,00
-Fornecedor Eletrônico
-DL
-Equipamentos
-Venc: 18/04/2026
-12d
-R$ 6.400,00
-Insumos Industriais GO
-INOVE
-Matéria Prima
-Venc: 03/03/2026
-58d
-R$ 5.600,00
-Transportes Rápidos
-LS
-Frete e Logística
-Venc: 20/04/2026
-10d
-R$ 3.800,00
-Energia Elétrica CELG
-LS
-Utilidades
-Venc: 08/03/2026
-53d
-R$ 2.100,00
-📊 Receitas por Categoria
-Categoria	Valor	% do Total
- Venda de Gôndolas	R$ 248.800,00	
-67.2%
- Aporte LS	R$ 50.000,00	
-13.5%
- Venda de Peças	R$ 49.400,00	
-13.3%
- Serviços de Montagem	R$ 22.100,00	
-6.0%
-📊 Despesas por Categoria
-Categoria	Valor	% do Total
- Matéria Prima	R$ 71.900,00	
-50.2%
- Aporte DL	R$ 50.000,00	
-34.9%
- Frete e Logística	R$ 12.700,00	
-8.9%
- Equipamentos	R$ 6.400,00	
-4.5%
- Utilidades	R$ 2.100,00	
-1.5%
-📥 Contas a Receber
-13
-Emp.	Nome	Categoria	Venc.	Valor	Status
-LS	Atacadão Distribuidora	Venda de Gôndolas	05/04/2026	R$ 18.500,00	Recebido
-LS	Supermercados Bom Preço	Venda de Gôndolas	12/04/2026	R$ 32.000,00	Recebido
-LS	Rede Varejo Sul	Serviços de Montagem	18/04/2026	R$ 9.800,00	Atrasado
-LS	Distribuidora Central	Venda de Gôndolas	25/04/2026	R$ 14.200,00	Atrasado
-LS	Mercado Grande SP	Venda de Gôndolas	15/03/2026	R$ 7.600,00	Atrasado
-INOVE	Grupo Carrefour	Venda de Gôndolas	08/04/2026	R$ 55.000,00	Recebido
-INOVE	Walmart Brasil	Venda de Gôndolas	15/04/2026	R$ 78.000,00	Recebido
-INOVE	Makro Atacadista	Venda de Gôndolas	22/04/2026	R$ 43.500,00	Atrasado
-INOVE	Coop Cooperativa	Serviços de Montagem	10/03/2026	R$ 12.300,00	Atrasado
-INOVE	Inove Gôndolas (Aporte)	Aporte LS	05/04/2026	R$ 50.000,00	Recebido
-DL	Indústrias Reunidas Ltda	Venda de Peças	10/04/2026	R$ 28.900,00	Recebido
-DL	Fábrica de Móveis Alfa	Venda de Peças	20/04/2026	R$ 15.700,00	Atrasado
-DL	Metalúrgica São Paulo	Venda de Peças	05/03/2026	R$ 4.800,00	Atrasado
-📤 Contas a Pagar
-9
-Emp.	Nome	Categoria	Venc.	Valor	Status
-LS	Aço e Arame SA	Matéria Prima	10/04/2026	R$ 12.500,00	Atrasado
-LS	Transportes Rápidos	Frete e Logística	20/04/2026	R$ 3.800,00	Atrasado
-LS	Energia Elétrica CELG	Utilidades	08/03/2026	R$ 2.100,00	Atrasado
-LS	LS Gôndolas (Aporte)	Aporte DL	05/04/2026	R$ 50.000,00	Atrasado
-INOVE	Matéria Prima Brasil	Matéria Prima	15/04/2026	R$ 34.000,00	Atrasado
-INOVE	Logística Express	Frete e Logística	25/04/2026	R$ 8.900,00	Pago
-INOVE	Insumos Industriais GO	Matéria Prima	03/03/2026	R$ 5.600,00	Atrasado
-DL	Chapa e Ferro Nacional	Matéria Prima	12/04/2026	R$ 19.800,00	Atrasado
-DL	Fornecedor Eletrônico	Equipamentos	18/04/2026	R$ 6.400,00	Atrasado
-Dashboard Financeiro · Grupo Inove  |  Gestão: Alfer Gestão Financeira Estratégica  |  Powered by API Omie
+/* HEADER */
+header{
+  background:var(--verde);padding:0 32px;height:66px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 2px 20px rgba(0,0,0,0.18);
+}
+.logo-area{display:flex;align-items:center;gap:14px}
+.logo-badge{
+  background:var(--lima);color:var(--verde);
+  font-weight:800;font-size:13px;padding:6px 13px;
+  border-radius:7px;letter-spacing:.3px;
+}
+.logo-img{height:38px;width:auto;display:none}
+.header-titles{line-height:1.3}
+.header-titles .t1{color:#fff;font-weight:700;font-size:15px}
+.header-titles .t2{color:rgba(255,255,255,.6);font-size:12px}
+.header-right{display:flex;align-items:center;gap:10px}
+.status-pill{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  padding:5px 12px;border-radius:20px;font-size:12px;color:rgba(255,255,255,.75)
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#888}
+.dot.on{background:var(--lima);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.btn-cfg{
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);
+  color:#fff;padding:7px 15px;border-radius:8px;font-size:13px;
+  cursor:pointer;font-family:inherit;transition:.2s
+}
+.btn-cfg:hover{background:rgba(255,255,255,.22)}
+
+/* MODAL */
+.overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.55);
+  backdrop-filter:blur(5px);z-index:1000;
+  display:flex;align-items:center;justify-content:center
+}
+.overlay.off{display:none}
+.modal{
+  background:#fff;border-radius:18px;padding:34px;
+  width:580px;max-width:95vw;max-height:90vh;overflow-y:auto;
+  box-shadow:0 30px 100px rgba(0,0,0,.25)
+}
+.modal h2{font-size:19px;font-weight:700;color:var(--verde);margin-bottom:5px}
+.modal > p{color:var(--leve);font-size:13.5px;margin-bottom:22px;line-height:1.55}
+.emp-block{
+  border:1.5px solid var(--border);border-radius:12px;
+  padding:16px;margin-bottom:12px;background:var(--bg)
+}
+.emp-block h3{
+  font-size:13px;font-weight:700;color:var(--verde);
+  margin-bottom:12px;display:flex;align-items:center;gap:8px
+}
+.emp-tag{
+  background:var(--lima);color:var(--verde);
+  font-size:10px;padding:2px 7px;border-radius:4px;font-weight:800
+}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field label{
+  display:block;font-size:11px;font-weight:700;
+  color:var(--leve);margin-bottom:4px;
+  text-transform:uppercase;letter-spacing:.5px
+}
+.field input{
+  width:100%;padding:9px 12px;border:1.5px solid var(--border);
+  border-radius:8px;font-size:13px;font-family:'DM Mono',monospace;
+  color:var(--texto);background:#fff;transition:.2s
+}
+.field input:focus{outline:none;border-color:var(--verde)}
+.btn-save{
+  background:var(--verde);color:#fff;border:none;
+  padding:13px;border-radius:10px;font-size:14px;font-weight:700;
+  cursor:pointer;font-family:inherit;width:100%;margin-top:16px;transition:.2s
+}
+.btn-save:hover{background:var(--verde-hover)}
+.modal-note{
+  margin-top:11px;font-size:12px;color:var(--leve);
+  text-align:center;line-height:1.55
+}
+.cat-filter-row{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 16px;border:1.5px solid #ffd6cc;
+  background:#fff5f3;border-radius:10px;margin-bottom:14px
+}
+.cat-filter-row label{font-size:13px;font-weight:600;color:var(--texto);flex:1}
+.cat-filter-row small{font-size:11.5px;color:var(--leve)}
+.toggle-sw{position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0}
+.toggle-sw input{opacity:0;width:0;height:0}
+.slider{
+  position:absolute;cursor:pointer;inset:0;
+  background:#ccc;border-radius:24px;transition:.3s
+}
+.slider:before{
+  position:absolute;content:'';height:18px;width:18px;
+  left:3px;bottom:3px;background:white;border-radius:50%;transition:.3s
+}
+input:checked+.slider{background:var(--verde)}
+input:checked+.slider:before{transform:translateX(18px)}
+
+/* MAIN */
+main{max-width:1320px;margin:0 auto;padding:26px 22px 52px}
+
+/* TOPBAR */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:22px;flex-wrap:wrap;gap:12px
+}
+.period-sel{
+  display:flex;background:var(--card);
+  border:1.5px solid var(--border);border-radius:10px;
+  overflow:hidden;box-shadow:var(--shadow)
+}
+.pbtn{
+  padding:8px 18px;font-size:13px;font-family:inherit;
+  font-weight:500;cursor:pointer;border:none;
+  background:transparent;color:var(--leve);transition:.15s
+}
+.pbtn.on{background:var(--verde);color:#fff}
+.pbtn:not(.on):hover{background:var(--bg)}
+input[type=month]{
+  padding:8px 12px;border:1.5px solid var(--border);
+  border-radius:10px;font-family:inherit;font-size:13px;
+  color:var(--texto);background:var(--card);cursor:pointer;
+  box-shadow:var(--shadow)
+}
+.refresh-btn{
+  display:flex;align-items:center;gap:7px;
+  padding:8px 15px;background:var(--card);
+  border:1.5px solid var(--border);border-radius:10px;
+  font-size:13px;font-family:inherit;font-weight:600;
+  color:var(--verde);cursor:pointer;transition:.2s;box-shadow:var(--shadow)
+}
+.refresh-btn:hover{background:#eef4ee}
+.refresh-btn.loading svg{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.upd-label{font-size:11.5px;color:var(--leve);font-family:'DM Mono',monospace}
+
+/* EMPRESA TABS */
+.etabs{display:flex;gap:7px;margin-bottom:22px;flex-wrap:wrap}
+.etab{
+  padding:7px 17px;border-radius:20px;
+  border:1.5px solid var(--border);font-size:13px;
+  font-weight:600;cursor:pointer;background:var(--card);
+  color:var(--leve);transition:.2s
+}
+.etab.on,.etab:hover{background:var(--verde);color:#fff;border-color:var(--verde)}
+.etab.all-tab.on{background:var(--lima);color:var(--verde);border-color:var(--lima)}
+
+/* AVISO APORTES */
+.aporte-aviso{
+  display:none;
+  align-items:center;gap:10px;
+  padding:10px 16px;border-radius:9px;
+  background:#fff8e1;border:1px solid #ffd54f;
+  margin-bottom:16px;font-size:13px;color:#5d4037
+}
+.aporte-aviso.vis{display:flex}
+
+/* KPI GRID */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+@media(max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi{
+  background:var(--card);border-radius:14px;
+  padding:20px;box-shadow:var(--shadow);
+  border:1.5px solid var(--border);position:relative;overflow:hidden;
+  transition:transform .2s
+}
+.kpi:hover{transform:translateY(-2px)}
+.kpi::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px
+}
+.kpi.rec::before{background:var(--lima)}
+.kpi.arec::before{background:var(--blue)}
+.kpi.pag::before{background:var(--warn)}
+.kpi.atr::before{background:var(--danger)}
+.kpi-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--leve);margin-bottom:9px}
+.kpi-val{font-size:25px;font-weight:700;font-family:'DM Mono',monospace;letter-spacing:-.5px;line-height:1}
+.kpi-val.danger{color:var(--danger)}
+.kpi-val.warn{color:var(--warn)}
+.kpi-sub{margin-top:7px;font-size:11.5px;color:var(--leve)}
+.kpi-ico{font-size:24px;position:absolute;right:16px;top:16px;opacity:.12}
+
+/* MINI EMPRESAS */
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:700px){.mini-grid{grid-template-columns:1fr}}
+.mini-card{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)
+}
+.mini-nome{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--leve);margin-bottom:10px}
+.mini-row{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
+.mini-row span:first-child{color:var(--leve)}
+.mini-row span:last-child{font-weight:600;font-family:'DM Mono',monospace;font-size:12px}
+
+/* SEÇÃO ATRASADOS */
+.atr-section{background:var(--card);border-radius:14px;padding:22px;box-shadow:var(--shadow);border:1.5px solid var(--border);margin-bottom:16px}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.sec-title{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.badge{font-size:11px;padding:3px 8px;border-radius:20px;font-weight:700}
+.badge.danger{background:var(--danger-bg);color:var(--danger)}
+.badge.warn{background:var(--warn-bg);color:var(--warn)}
+.badge.ok{background:#eef4ee;color:var(--verde)}
+.alerta{
+  display:flex;align-items:center;gap:12px;
+  padding:11px 13px;border-radius:10px;
+  border-left:3.5px solid var(--danger);
+  background:var(--danger-bg);margin-bottom:7px;transition:.15s
+}
+.alerta:hover{transform:translateX(2px)}
+.alerta .info{flex:1;min-width:0}
+.alerta .nome{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.alerta .det{font-size:11px;color:var(--leve);margin-top:2px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.alerta .val-atr{font-size:14.5px;font-weight:700;color:var(--danger);font-family:'DM Mono',monospace;white-space:nowrap}
+.dias-tag{background:var(--danger);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px}
+
+/* MAIN GRID */
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:900px){.main-grid{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:14px;padding:22px;box-shadow:var(--shadow);border:1.5px solid var(--border)}
+
+/* TABELA */
+.dtable{width:100%;border-collapse:collapse;font-size:12.5px}
+.dtable th{
+  text-align:left;font-size:10px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.6px;
+  color:var(--leve);padding:0 7px 9px;
+  border-bottom:1.5px solid var(--border)
+}
+.dtable td{padding:9px 7px;border-bottom:1px solid #f1f5f1;vertical-align:middle}
+.dtable tr:last-child td{border-bottom:none}
+.dtable tr:hover td{background:var(--bg)}
+.pill{display:inline-block;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.2px}
+.pill-ls{background:#e8f4e8;color:#2A542D}
+.pill-in{background:#fff3cd;color:#856404}
+.pill-dl{background:#dbeafe;color:#1d4ed8}
+.v-pos{color:#2A542D;font-weight:700;font-family:'DM Mono',monospace}
+.v-neg{color:var(--danger);font-weight:700;font-family:'DM Mono',monospace}
+.v-neu{font-weight:600;font-family:'DM Mono',monospace}
+.stag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap}
+.s-rec{background:#eef4ee;color:var(--verde)}
+.s-ab{background:#fffbeb;color:var(--warn)}
+.s-atr{background:var(--danger-bg);color:var(--danger)}
+.s-pago{background:#eef4ee;color:var(--verde)}
+
+/* CATEGORIAS */
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:900px){.cat-grid{grid-template-columns:1fr}}
+.chart-wrap{position:relative;height:200px;margin-bottom:16px}
+.cat-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.cat-table th{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--leve);padding:0 6px 8px;text-align:left;border-bottom:1.5px solid var(--border)}
+.cat-table td{padding:8px 6px;border-bottom:1px solid #f1f5f1;vertical-align:middle}
+.cat-table tr:last-child td{border-bottom:none}
+.cat-bar-wrap{display:flex;align-items:center;gap:8px}
+.cat-bar-bg{flex:1;height:6px;background:#f0f4f0;border-radius:3px;overflow:hidden}
+.cat-bar{height:100%;border-radius:3px;transition:width .4s ease}
+.cat-pct{font-size:11px;color:var(--leve);font-family:'DM Mono',monospace;min-width:34px;text-align:right}
+
+/* LOADING */
+.loading{display:flex;align-items:center;justify-content:center;height:100px;color:var(--leve);font-size:13px;gap:10px}
+.spinner{width:24px;height:24px;border:2.5px solid var(--border);border-top-color:var(--verde);border-radius:50%;animation:spin .8s linear infinite}
+.empty{text-align:center;padding:22px;color:var(--leve);font-size:13px}
+.more-row{text-align:center;padding:9px;font-size:12px;color:var(--leve)}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;font-size:11.5px;color:var(--leve);border-top:1px solid var(--border);margin-top:6px}
+
+/* DEBUG PANEL */
+.debug-panel{
+  display:none;
+  background:#1a1a2e;color:#a8ff78;
+  font-family:'DM Mono',monospace;font-size:11px;
+  padding:16px;border-radius:10px;margin-bottom:16px;
+  max-height:220px;overflow:auto;white-space:pre-wrap;word-break:break-all
+}
+.debug-panel.vis{display:block}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="" class="logo-img" alt="Alfer" id="logoImg">
+    <div class="logo-badge" id="logoBadge">ALFER</div>
+    <div class="header-titles">
+      <div class="t1">Gestão Financeira Estratégica</div>
+      <div class="t2">Dashboard — <strong style="color:var(--lima)">Grupo Inove</strong></div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="status-pill">
+      <div class="dot" id="dot"></div>
+      <span id="statusTxt">Desconectado</span>
+    </div>
+    <button class="btn-cfg" onclick="rodarDiagnostico()" id="btnDiag">🔍 Diagnóstico</button>
+    <button class="btn-cfg" onclick="openModal()">⚙ Configurar</button>
+  </div>
+</header>
+
+<!-- MODAL -->
+<div class="overlay off" id="overlay">
+  <div class="modal">
+    <h2>🔐 Credenciais Omie — Grupo Inove</h2>
+    <p>Informe as chaves de API de cada empresa. As credenciais ficam salvas <strong>apenas no seu navegador</strong>, nunca são enviadas a terceiros.</p>
+
+    <div class="cat-filter-row">
+      <div>
+        <label>🚫 Ocultar aportes entre empresas</label>
+        <small>Exclui: "Aporte INOVE", "Aporte LS", "Aporte DL"</small>
+      </div>
+      <label class="toggle-sw">
+        <input type="checkbox" id="toggleAporte" checked onchange="salvarConfig()">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="emp-block">
+      <h3>🏭 LS Gôndolas <span class="emp-tag">EMP 1</span></h3>
+      <div class="row2">
+        <div class="field"><label>App Key</label><input type="text" id="ls_k" placeholder="000000000" autocomplete="off"></div>
+        <div class="field"><label>App Secret</label><input type="password" id="ls_s" placeholder="••••••••••" autocomplete="off"></div>
+      </div>
+    </div>
+    <div class="emp-block">
+      <h3>🏗 Inove Gôndolas <span class="emp-tag">EMP 2</span></h3>
+      <div class="row2">
+        <div class="field"><label>App Key</label><input type="text" id="in_k" placeholder="000000000" autocomplete="off"></div>
+        <div class="field"><label>App Secret</label><input type="password" id="in_s" placeholder="••••••••••" autocomplete="off"></div>
+      </div>
+    </div>
+    <div class="emp-block">
+      <h3>🔩 DL Indústria Gôndolas <span class="emp-tag">EMP 3</span></h3>
+      <div class="row2">
+        <div class="field"><label>App Key</label><input type="text" id="dl_k" placeholder="000000000" autocomplete="off"></div>
+        <div class="field"><label>App Secret</label><input type="password" id="dl_s" placeholder="••••••••••" autocomplete="off"></div>
+      </div>
+    </div>
+
+    <button class="btn-save" onclick="salvarConfig()">✓ Salvar e Carregar</button>
+    <p class="modal-note">🔒 Dados salvos localmente (localStorage).<br>Acesse as chaves em: <strong>Omie → Integração → App Key / App Secret</strong></p>
+  </div>
+</div>
+
+<main>
+  <!-- DIAGNÓSTICO -->
+  <div id="diagPanel" style="display:none;background:#fff;border:2px solid var(--verde);border-radius:14px;padding:22px;margin-bottom:20px;box-shadow:var(--shadow-md)">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <div style="font-size:15px;font-weight:700;color:var(--verde)">🔍 Diagnóstico — Campos da API Omie</div>
+      <button onclick="document.getElementById('diagPanel').style.display='none'" style="background:none;border:1px solid var(--border);padding:4px 12px;border-radius:7px;cursor:pointer;font-family:inherit;font-size:12px">Fechar</button>
+    </div>
+    <div id="diagConteudo"></div>
+  </div>
+  <!-- DEBUG INTERNO -->
+  <div class="debug-panel" id="debugPanel"></div>
+
+  <!-- AVISO APORTES OCULTOS -->
+  <div class="aporte-aviso" id="aporteAviso">
+    ⚠️ <strong>Aportes entre empresas ocultos.</strong> Os lançamentos das categorias "Aporte INOVE", "Aporte LS" e "Aporte DL" não estão sendo considerados nos totais.
+    <button onclick="document.getElementById('toggleAporte').checked=false;salvarConfig();renderDash()" style="margin-left:auto;background:none;border:1px solid #d97706;color:#d97706;padding:3px 10px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit">Mostrar</button>
+  </div>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <div class="period-sel">
+        <button class="pbtn on" onclick="setPer('mes',this)">Este Mês</button>
+        <button class="pbtn" onclick="setPer('tri',this)">Trimestre</button>
+        <button class="pbtn" onclick="setPer('ano',this)">Ano</button>
+      </div>
+      <input type="month" id="mesInput" onchange="carregarDados()">
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span class="upd-label" id="updLabel">—</span>
+      <button class="refresh-btn" id="rfBtn" onclick="carregarDados()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0115.2-2.37L23 10M1 14l4.3 3.37A9 9 0 0019.5 15"/></svg>
+        Atualizar
+      </button>
+    </div>
+  </div>
+
+  <!-- EMPRESA TABS -->
+  <div class="etabs">
+    <button class="etab all-tab on" onclick="setEmp('todas',this)">Todas</button>
+    <button class="etab" onclick="setEmp('LS',this)">🏭 LS Gôndolas</button>
+    <button class="etab" onclick="setEmp('INOVE',this)">🏗 Inove Gôndolas</button>
+    <button class="etab" onclick="setEmp('DL',this)">🔩 DL Indústria</button>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-grid">
+    <div class="kpi rec"><div class="kpi-ico">📥</div><div class="kpi-lbl">Receita Recebida</div><div class="kpi-val" id="kRec">—</div><div class="kpi-sub" id="kRecSub">...</div></div>
+    <div class="kpi arec"><div class="kpi-ico">📋</div><div class="kpi-lbl">A Receber (Aberto)</div><div class="kpi-val" id="kARec">—</div><div class="kpi-sub" id="kARecSub">...</div></div>
+    <div class="kpi pag"><div class="kpi-ico">📤</div><div class="kpi-lbl">A Pagar no Mês</div><div class="kpi-val warn" id="kPag">—</div><div class="kpi-sub" id="kPagSub">...</div></div>
+    <div class="kpi atr"><div class="kpi-ico">🚨</div><div class="kpi-lbl">Total em Atraso</div><div class="kpi-val danger" id="kAtr">—</div><div class="kpi-sub" id="kAtrSub">...</div></div>
+  </div>
+
+  <!-- MINI POR EMPRESA -->
+  <div class="mini-grid">
+    <div class="mini-card"><div class="mini-nome">🏭 LS Gôndolas</div>
+      <div class="mini-row"><span>Recebido</span><span id="mLS_r">—</span></div>
+      <div class="mini-row"><span>A Receber</span><span id="mLS_a">—</span></div>
+      <div class="mini-row"><span>A Pagar</span><span id="mLS_p">—</span></div>
+    </div>
+    <div class="mini-card"><div class="mini-nome">🏗 Inove Gôndolas</div>
+      <div class="mini-row"><span>Recebido</span><span id="mIN_r">—</span></div>
+      <div class="mini-row"><span>A Receber</span><span id="mIN_a">—</span></div>
+      <div class="mini-row"><span>A Pagar</span><span id="mIN_p">—</span></div>
+    </div>
+    <div class="mini-card"><div class="mini-nome">🔩 DL Indústria</div>
+      <div class="mini-row"><span>Recebido</span><span id="mDL_r">—</span></div>
+      <div class="mini-row"><span>A Receber</span><span id="mDL_a">—</span></div>
+      <div class="mini-row"><span>A Pagar</span><span id="mDL_p">—</span></div>
+    </div>
+  </div>
+
+  <!-- ATRASADOS -->
+  <div class="atr-section">
+    <div class="sec-head">
+      <div class="sec-title">🚨 Clientes em Atraso <span class="badge danger" id="bdAtrR">0</span></div>
+      <span class="upd-label" id="totAtrR">—</span>
+    </div>
+    <div id="listaAtrR"><div class="loading"><div class="spinner"></div>Carregando...</div></div>
+  </div>
+
+  <div class="atr-section">
+    <div class="sec-head">
+      <div class="sec-title">⚠️ Contas a Pagar em Atraso <span class="badge danger" id="bdAtrP">0</span></div>
+      <span class="upd-label" id="totAtrP">—</span>
+    </div>
+    <div id="listaAtrP"><div class="loading"><div class="spinner"></div>Carregando...</div></div>
+  </div>
+
+  <!-- CATEGORIAS -->
+  <div class="cat-grid">
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">📊 Receitas por Categoria</div></div>
+      <div class="chart-wrap"><canvas id="chartRec"></canvas></div>
+      <div id="catRecTabela"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+    <div class="card">
+      <div class="sec-head"><div class="sec-title">📊 Despesas por Categoria</div></div>
+      <div class="chart-wrap"><canvas id="chartPag"></canvas></div>
+      <div id="catPagTabela"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+  </div>
+
+  <!-- TABELAS DETALHADAS -->
+  <div class="main-grid">
+    <div class="card">
+      <div class="sec-head">
+        <div class="sec-title">📥 Contas a Receber <span class="badge ok" id="bdRec">—</span></div>
+      </div>
+      <div id="tblRec"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+    <div class="card">
+      <div class="sec-head">
+        <div class="sec-title">📤 Contas a Pagar <span class="badge warn" id="bdPag">—</span></div>
+      </div>
+      <div id="tblPag"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Dashboard Financeiro · <strong>Grupo Inove</strong> &nbsp;|&nbsp; Gestão: <strong>Alfer Gestão Financeira Estratégica</strong> &nbsp;|&nbsp; Powered by API Omie
+</footer>
+
+<script>
+// ===========================================
+// ESTADO
+// ===========================================
+let CFG = {};
+let DB  = { receber: [], pagar: [] };
+let empFiltro = 'todas';
+let periodo   = 'mes';
+let chartRec  = null;
+let chartPag  = null;
+
+// Categorias de aporte a filtrar
+const APORTES = ['aporte inove', 'aporte ls', 'aporte dl'];
+
+function isAporte(cat) {
+  if (!cat) return false;
+  return APORTES.some(a => cat.toLowerCase().includes(a));
+}
+
+function ocultarAportes() {
+  const cfg = getCFG();
+  return cfg.ocultarAportes !== false; // padrão true
+}
+
+// ===========================================
+// CONFIG
+// ===========================================
+function getCFG() {
+  try { return JSON.parse(localStorage.getItem('omie_inove_v2') || '{}'); }
+  catch { return {}; }
+}
+
+function openModal() {
+  const c = getCFG();
+  if (c.LS)    { document.getElementById('ls_k').value = c.LS.key;    document.getElementById('ls_s').value = c.LS.secret; }
+  if (c.INOVE) { document.getElementById('in_k').value = c.INOVE.key; document.getElementById('in_s').value = c.INOVE.secret; }
+  if (c.DL)    { document.getElementById('dl_k').value = c.DL.key;    document.getElementById('dl_s').value = c.DL.secret; }
+  document.getElementById('toggleAporte').checked = c.ocultarAportes !== false;
+  document.getElementById('overlay').classList.remove('off');
+}
+document.getElementById('overlay').addEventListener('click', e => {
+  if (e.target.id === 'overlay') document.getElementById('overlay').classList.add('off');
+});
+
+function salvarConfig() {
+  const c = {
+    LS:    { key: document.getElementById('ls_k').value.trim(), secret: document.getElementById('ls_s').value.trim() },
+    INOVE: { key: document.getElementById('in_k').value.trim(), secret: document.getElementById('in_s').value.trim() },
+    DL:    { key: document.getElementById('dl_k').value.trim(), secret: document.getElementById('dl_s').value.trim() },
+    ocultarAportes: document.getElementById('toggleAporte').checked,
+  };
+  if (c.LS.key && c.INOVE.key && c.DL.key) {
+    localStorage.setItem('omie_inove_v2', JSON.stringify(c));
+    document.getElementById('overlay').classList.add('off');
+    CFG = c;
+    carregarDados();
+  } else {
+    // só salva preferências sem fechar
+    const existing = getCFG();
+    existing.ocultarAportes = document.getElementById('toggleAporte').checked;
+    localStorage.setItem('omie_inove_v2', JSON.stringify(existing));
+    renderDash(); // re-render com nova preferência de aporte
+  }
+}
+
+// ===========================================
+// OMIE API
+// ===========================================
+async function omieCall(endpoint, call, param, empId) {
+  const creds = CFG[empId];
+  if (!creds || !creds.key) return null;
+
+  const body = { call, app_key: creds.key, app_secret: creds.secret, param: [param] };
+
+  const res = await fetch(`https://app.omie.com.br/api/v1/${endpoint}/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const err = await res.text();
+    log(`ERRO ${empId} ${call}: HTTP ${res.status} — ${err.substring(0,200)}`);
+    return null;
+  }
+  return res.json();
+}
+
+async function listarPaginado(endpoint, call, param, empId, listaKey) {
+  let pg = 1, total = 1, acc = [];
+  while (pg <= total) {
+    const r = await omieCall(endpoint, call, { ...param, pagina: pg, registros_por_pagina: 50 }, empId);
+    if (!r) break;
+    if (r.faultstring) { log(`FAULT ${empId}: ${r.faultstring}`); break; }
+    total = r.total_de_paginas || 1;
+    const lista = r[listaKey] || [];
+    acc = acc.concat(lista.map(i => ({ ...i, _emp: empId })));
+    pg++;
+    if (pg > 30) break;
+  }
+  return acc;
+}
+
+// ===========================================
+// EXTRAIR VALOR CORRETO
+// ===========================================
+// O Omie retorna: valor_documento (valor original), valor_parcela (parcela),
+// valor_recebido / valor_pago (baixado), desconto, juros, multa
+// Para exibir "quanto vale o título": valor_documento
+// Para exibir "quanto foi recebido/pago": valor_recebido || valor_pago
+function getValorTitulo(item) {
+  // Tenta campos em ordem de prioridade (nomes variam por versão da API)
+  return parseFloat(
+    item.valor_documento  ||
+    item.nValorTitulo     ||
+    item.valor_titulo     ||
+    item.vr_valor         ||
+    0
+  );
+}
+
+function getValorRecebido(item) {
+  return parseFloat(
+    item.valor_recebido ||
+    item.nValorRecebido ||
+    item.valor_baixado  ||
+    0
+  );
+}
+
+function getCategoria(item) {
+  // Pode vir em: categoria, descricao_categoria, array de categorias
+  if (item.categoria)           return item.categoria;
+  if (item.descricao_categoria) return item.descricao_categoria;
+  if (item.categorias && item.categorias.length > 0) {
+    return item.categorias[0].descricao || item.categorias[0].codigo_categoria || '—';
+  }
+  return '—';
+}
+
+function getStatus(item) {
+  // Omie usa: status_titulo, situacao, cStatus
+  const s = (item.status_titulo || item.situacao || item.cStatus || '').toUpperCase();
+  if (s === 'RECEBIDO' || s === 'BAIXADO' || s === 'R' || s === 'LIQUIDADO') return 'RECEBIDO';
+  if (s === 'PAGO'     || s === 'P')                                         return 'PAGO';
+  if (s === 'ATRASADO' || s === 'VENCIDO' || s === 'A')                      return 'ATRASADO';
+  return 'ABERTO';
+}
+
+function getNomeEntidade(item, tipo) {
+  if (tipo === 'receber') {
+    return item.nome_cliente || item.razao_social || item.cNomeCliente || '—';
+  }
+  return item.nome_fornecedor || item.razao_social || item.cFornecedor || item.fornecedor_nome || '—';
+}
+
+function getVencimento(item) {
+  return item.data_vencimento || item.dDtVencimento || item.vencimento || '—';
+}
+
+// ===========================================
+// CARREGAR DADOS
+// ===========================================
+function getDatas() {
+  const el = document.getElementById('mesInput');
+  const [ano, mes] = (el.value || `${new Date().getFullYear()}-${String(new Date().getMonth()+1).padStart(2,'0')}`).split('-').map(Number);
+  const ult = new Date(ano, mes, 0).getDate();
+  return {
+    de:  `01/${String(mes).padStart(2,'0')}/${ano}`,
+    ate: `${ult}/${String(mes).padStart(2,'0')}/${ano}`,
+  };
+}
+
+async function carregarDados() {
+  CFG = getCFG();
+  if (!CFG.LS?.key) { carregarDemo(); return; }
+
+  setStatus('Carregando...', false);
+  document.getElementById('rfBtn').classList.add('loading');
+
+  const { de, ate } = getDatas();
+
+  const paramRec = { filtrar_por_data_de: de, filtrar_por_data_ate: ate };
+  const paramPag = { filtrar_por_data_de: de, filtrar_por_data_ate: ate };
+
+  try {
+    const [rLS, rIN, rDL, pLS, pIN, pDL] = await Promise.all([
+      listarPaginado('financas/contareceber', 'ListarContasReceber', paramRec, 'LS',    'conta_receber_cadastro'),
+      listarPaginado('financas/contareceber', 'ListarContasReceber', paramRec, 'INOVE', 'conta_receber_cadastro'),
+      listarPaginado('financas/contareceber', 'ListarContasReceber', paramRec, 'DL',    'conta_receber_cadastro'),
+      listarPaginado('financas/contapagar',   'ListarContasPagar',   paramPag, 'LS',    'conta_pagar_cadastro'),
+      listarPaginado('financas/contapagar',   'ListarContasPagar',   paramPag, 'INOVE', 'conta_pagar_cadastro'),
+      listarPaginado('financas/contapagar',   'ListarContasPagar',   paramPag, 'DL',    'conta_pagar_cadastro'),
+    ]);
+
+    // Log de debug (campos reais)
+    if (rLS.length > 0) log('AMOSTRA RECEBER LS:\n' + JSON.stringify(rLS[0], null, 2));
+    if (pLS.length > 0) log('AMOSTRA PAGAR LS:\n'   + JSON.stringify(pLS[0], null, 2));
+
+    DB.receber = [...rLS, ...rIN, ...rDL];
+    DB.pagar   = [...pLS, ...pIN, ...pDL];
+
+    setStatus('Online', true);
+    document.getElementById('updLabel').textContent = 'Atualizado: ' + new Date().toLocaleTimeString('pt-BR');
+
+  } catch(e) {
+    log('ERRO GERAL: ' + e.message);
+    setStatus('Erro — usando demo', false);
+    carregarDemo();
+    return;
+  } finally {
+    document.getElementById('rfBtn').classList.remove('loading');
+  }
+
+  renderDash();
+}
+
+function log(txt) {
+  const p = document.getElementById('debugPanel');
+  p.classList.add('vis');
+  p.textContent = txt.substring(0, 2000);
+  // auto-fecha após 15s quando em produção com dados reais
+  // setTimeout(() => p.classList.remove('vis'), 15000);
+}
+
+// ===========================================
+// DADOS DEMO
+// ===========================================
+function carregarDemo() {
+  const now   = new Date();
+  const mes   = now.getMonth() + 1;
+  const ano   = now.getFullYear();
+  const mes_  = String(mes).padStart(2,'0');
+  const mant  = mes > 1 ? mes - 1 : 12;
+  const anoa  = mes > 1 ? ano : ano - 1;
+  const mant_ = String(mant).padStart(2,'0');
+
+  DB.receber = [
+    { _emp:'LS',    nome_cliente:'Atacadão Distribuidora', data_vencimento:`05/${mes_}/${ano}`,  valor_documento:18500, valor_recebido:18500, situacao:'RECEBIDO', categoria:'Venda de Gôndolas' },
+    { _emp:'LS',    nome_cliente:'Supermercados Bom Preço',data_vencimento:`12/${mes_}/${ano}`,  valor_documento:32000, valor_recebido:32000, situacao:'RECEBIDO', categoria:'Venda de Gôndolas' },
+    { _emp:'LS',    nome_cliente:'Rede Varejo Sul',         data_vencimento:`18/${mes_}/${ano}`,  valor_documento:9800,  valor_recebido:0,     situacao:'ABERTO',   categoria:'Serviços de Montagem' },
+    { _emp:'LS',    nome_cliente:'Distribuidora Central',   data_vencimento:`25/${mes_}/${ano}`,  valor_documento:14200, valor_recebido:0,     situacao:'ABERTO',   categoria:'Venda de Gôndolas' },
+    { _emp:'LS',    nome_cliente:'Mercado Grande SP',        data_vencimento:`15/${mant_}/${anoa}`, valor_documento:7600,  valor_recebido:0,     situacao:'ATRASADO', categoria:'Venda de Gôndolas' },
+    { _emp:'INOVE', nome_cliente:'Grupo Carrefour',          data_vencimento:`08/${mes_}/${ano}`,  valor_documento:55000, valor_recebido:55000, situacao:'RECEBIDO', categoria:'Venda de Gôndolas' },
+    { _emp:'INOVE', nome_cliente:'Walmart Brasil',           data_vencimento:`15/${mes_}/${ano}`,  valor_documento:78000, valor_recebido:78000, situacao:'RECEBIDO', categoria:'Venda de Gôndolas' },
+    { _emp:'INOVE', nome_cliente:'Makro Atacadista',         data_vencimento:`22/${mes_}/${ano}`,  valor_documento:43500, valor_recebido:0,     situacao:'ABERTO',   categoria:'Venda de Gôndolas' },
+    { _emp:'INOVE', nome_cliente:'Coop Cooperativa',         data_vencimento:`10/${mant_}/${anoa}`, valor_documento:12300, valor_recebido:0,     situacao:'ATRASADO', categoria:'Serviços de Montagem' },
+    { _emp:'INOVE', nome_cliente:'Inove Gôndolas (Aporte)',  data_vencimento:`05/${mes_}/${ano}`,  valor_documento:50000, valor_recebido:50000, situacao:'RECEBIDO', categoria:'Aporte LS' },
+    { _emp:'DL',    nome_cliente:'Indústrias Reunidas Ltda', data_vencimento:`10/${mes_}/${ano}`,  valor_documento:28900, valor_recebido:28900, situacao:'RECEBIDO', categoria:'Venda de Peças' },
+    { _emp:'DL',    nome_cliente:'Fábrica de Móveis Alfa',   data_vencimento:`20/${mes_}/${ano}`,  valor_documento:15700, valor_recebido:0,     situacao:'ABERTO',   categoria:'Venda de Peças' },
+    { _emp:'DL',    nome_cliente:'Metalúrgica São Paulo',    data_vencimento:`05/${mant_}/${anoa}`, valor_documento:4800,  valor_recebido:0,     situacao:'ATRASADO', categoria:'Venda de Peças' },
+  ];
+
+  DB.pagar = [
+    { _emp:'LS',    nome_fornecedor:'Aço e Arame SA',         data_vencimento:`10/${mes_}/${ano}`,  valor_documento:12500, valor_pago:0,     situacao:'ABERTO',   categoria:'Matéria Prima' },
+    { _emp:'LS',    nome_fornecedor:'Transportes Rápidos',    data_vencimento:`20/${mes_}/${ano}`,  valor_documento:3800,  valor_pago:0,     situacao:'ABERTO',   categoria:'Frete e Logística' },
+    { _emp:'LS',    nome_fornecedor:'Energia Elétrica CELG',  data_vencimento:`08/${mant_}/${anoa}`, valor_documento:2100,  valor_pago:0,     situacao:'ATRASADO', categoria:'Utilidades' },
+    { _emp:'LS',    nome_fornecedor:'LS Gôndolas (Aporte)',   data_vencimento:`05/${mes_}/${ano}`,  valor_documento:50000, valor_pago:0,     situacao:'ABERTO',   categoria:'Aporte DL' },
+    { _emp:'INOVE', nome_fornecedor:'Matéria Prima Brasil',   data_vencimento:`15/${mes_}/${ano}`,  valor_documento:34000, valor_pago:0,     situacao:'ABERTO',   categoria:'Matéria Prima' },
+    { _emp:'INOVE', nome_fornecedor:'Logística Express',      data_vencimento:`25/${mes_}/${ano}`,  valor_documento:8900,  valor_pago:8900,  situacao:'PAGO',     categoria:'Frete e Logística' },
+    { _emp:'INOVE', nome_fornecedor:'Insumos Industriais GO', data_vencimento:`03/${mant_}/${anoa}`, valor_documento:5600,  valor_pago:0,     situacao:'ATRASADO', categoria:'Matéria Prima' },
+    { _emp:'DL',    nome_fornecedor:'Chapa e Ferro Nacional', data_vencimento:`12/${mes_}/${ano}`,  valor_documento:19800, valor_pago:0,     situacao:'ABERTO',   categoria:'Matéria Prima' },
+    { _emp:'DL',    nome_fornecedor:'Fornecedor Eletrônico',  data_vencimento:`18/${mes_}/${ano}`,  valor_documento:6400,  valor_pago:0,     situacao:'ABERTO',   categoria:'Equipamentos' },
+  ];
+
+  document.getElementById('updLabel').textContent = '⚠ Dados de demonstração';
+  setStatus('Demo', false);
+  renderDash();
+}
+
+// ===========================================
+// HELPERS
+// ===========================================
+function fmt(v) {
+  return 'R$ ' + Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+function diasAtr(venc) {
+  if (!venc || venc === '—') return -1;
+  const [d,m,a] = venc.split('/').map(Number);
+  const v = new Date(a,m-1,d); v.setHours(0,0,0,0);
+  const n = new Date(); n.setHours(0,0,0,0);
+  return Math.floor((n-v)/86400000);
+}
+
+function pillEmp(id) {
+  const m = {LS:['pill-ls','LS'], INOVE:['pill-in','INOVE'], DL:['pill-dl','DL']};
+  const [cls,lbl] = m[id] || ['','?'];
+  return `<span class="pill ${cls}">${lbl}</span>`;
+}
+
+function filtrar(lista) {
+  if (empFiltro === 'todas') return lista;
+  return lista.filter(i => i._emp === empFiltro);
+}
+
+function aplicarFiltroAporte(lista) {
+  if (!ocultarAportes()) return lista;
+  return lista.filter(i => !isAporte(getCategoria(i)));
+}
+
+// ===========================================
+// RENDER PRINCIPAL
+// ===========================================
+function renderDash() {
+  const cfg = getCFG();
+
+  // Aviso aportes
+  document.getElementById('aporteAviso').classList.toggle('vis', cfg.ocultarAportes !== false);
+
+  let rec = aplicarFiltroAporte(filtrar(DB.receber));
+  let pag = aplicarFiltroAporte(filtrar(DB.pagar));
+
+  // === KPIs ===
+  const recebido  = rec.filter(i => getStatus(i) === 'RECEBIDO').reduce((s,i) => s + getValorTitulo(i), 0);
+  const aReceber  = rec.filter(i => getStatus(i) === 'ABERTO').reduce((s,i) => s + getValorTitulo(i), 0);
+  const aPagar    = pag.filter(i => ['ABERTO','ATRASADO'].includes(getStatus(i))).reduce((s,i) => s + getValorTitulo(i), 0);
+
+  const atrR = rec.filter(i => getStatus(i) === 'ATRASADO' || (getStatus(i) === 'ABERTO' && diasAtr(getVencimento(i)) > 0));
+  const atrP = pag.filter(i => getStatus(i) === 'ATRASADO' || (getStatus(i) === 'ABERTO' && diasAtr(getVencimento(i)) > 0));
+  const totAtr = [...atrR,...atrP].reduce((s,i) => s + getValorTitulo(i), 0);
+
+  document.getElementById('kRec').textContent    = fmt(recebido);
+  document.getElementById('kARec').textContent   = fmt(aReceber);
+  document.getElementById('kPag').textContent    = fmt(aPagar);
+  document.getElementById('kAtr').textContent    = fmt(totAtr);
+  document.getElementById('kRecSub').textContent  = `${rec.filter(i=>getStatus(i)==='RECEBIDO').length} recebimentos`;
+  document.getElementById('kARecSub').textContent = `${rec.filter(i=>getStatus(i)==='ABERTO').length} em aberto`;
+  document.getElementById('kPagSub').textContent  = `${pag.filter(i=>['ABERTO','ATRASADO'].includes(getStatus(i))).length} contas`;
+  document.getElementById('kAtrSub').textContent  = `${atrR.length} clientes · ${atrP.length} fornecedores`;
+
+  // === Mini por empresa ===
+  ['LS','INOVE','DL'].forEach(id => {
+    const r = aplicarFiltroAporte(DB.receber.filter(i=>i._emp===id));
+    const p = aplicarFiltroAporte(DB.pagar.filter(i=>i._emp===id));
+    const pre = id === 'INOVE' ? 'mIN' : `m${id}`;
+    document.getElementById(`${pre}_r`).textContent = fmt(r.filter(i=>getStatus(i)==='RECEBIDO').reduce((s,i)=>s+getValorTitulo(i),0));
+    document.getElementById(`${pre}_a`).textContent = fmt(r.filter(i=>getStatus(i)==='ABERTO').reduce((s,i)=>s+getValorTitulo(i),0));
+    document.getElementById(`${pre}_p`).textContent = fmt(p.filter(i=>['ABERTO','ATRASADO'].includes(getStatus(i))).reduce((s,i)=>s+getValorTitulo(i),0));
+  });
+
+  // === Atrasados ===
+  renderAtrasados('listaAtrR','bdAtrR','totAtrR', atrR, 'receber');
+  renderAtrasados('listaAtrP','bdAtrP','totAtrP', atrP, 'pagar');
+
+  // === Categorias ===
+  renderCategorias(rec, pag);
+
+  // === Tabelas ===
+  renderTabela('tblRec','bdRec', rec, 'receber');
+  renderTabela('tblPag','bdPag', pag, 'pagar');
+}
+
+// ===========================================
+// ATRASADOS
+// ===========================================
+function renderAtrasados(elId, bdId, lblId, lista, tipo) {
+  document.getElementById(bdId).textContent = lista.length;
+  const tot = lista.reduce((s,i)=>s+getValorTitulo(i),0);
+  document.getElementById(lblId).textContent = lista.length ? `Total: ${fmt(tot)}` : '';
+  const el = document.getElementById(elId);
+
+  if (!lista.length) { el.innerHTML = '<div class="empty">✅ Nenhum em atraso</div>'; return; }
+
+  const sorted = [...lista].sort((a,b) => getValorTitulo(b) - getValorTitulo(a));
+  const cat = getCFG();
+
+  el.innerHTML = sorted.slice(0,8).map(item => {
+    const nome = getNomeEntidade(item, tipo);
+    const venc = getVencimento(item);
+    const dias = diasAtr(venc);
+    const catNome = getCategoria(item);
+    return `<div class="alerta">
+      <div class="info">
+        <div class="nome">${nome}</div>
+        <div class="det">
+          ${pillEmp(item._emp)}
+          <span>${catNome}</span>
+          <span>Venc: ${venc}</span>
+          ${dias > 0 ? `<span class="dias-tag">${dias}d</span>` : ''}
+        </div>
+      </div>
+      <div class="val-atr">${fmt(getValorTitulo(item))}</div>
+    </div>`;
+  }).join('') + (lista.length > 8 ? `<div class="more-row">+ ${lista.length-8} registro(s)</div>` : '');
+}
+
+// ===========================================
+// CATEGORIAS
+// ===========================================
+const CORES_REC = ['#B5CA56','#8fb83a','#6e9e2c','#4d7d1f','#2A542D','#a0c84a','#c8d97a','#ddf090','#5c8a2e','#76a836'];
+const CORES_PAG = ['#f87171','#ef4444','#dc2626','#b91c1c','#991b1b','#fca5a5','#fcd34d','#fb923c','#c2410c','#7c2d12'];
+
+function agruparPorCategoria(lista) {
+  const map = {};
+  lista.forEach(item => {
+    const cat = getCategoria(item);
+    const val = getValorTitulo(item);
+    map[cat] = (map[cat] || 0) + val;
+  });
+  return Object.entries(map)
+    .sort((a,b) => b[1] - a[1])
+    .filter(([,v]) => v > 0);
+}
+
+function renderCategorias(rec, pag) {
+  const catsRec = agruparPorCategoria(rec);
+  const catsPag = agruparPorCategoria(pag);
+
+  renderCatChart('chartRec', catsRec, CORES_REC, chartRec, c => { chartRec = c; });
+  renderCatChart('chartPag', catsPag, CORES_PAG, chartPag, c => { chartPag = c; });
+  renderCatTabela('catRecTabela', catsRec, CORES_REC);
+  renderCatTabela('catPagTabela', catsPag, CORES_PAG);
+}
+
+function renderCatChart(canvasId, cats, cores, existing, setter) {
+  if (existing) existing.destroy();
+  const ctx = document.getElementById(canvasId);
+  const total = cats.reduce((s,[,v])=>s+v,0);
+  const c = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: cats.map(([n])=>n),
+      datasets: [{
+        data: cats.map(([,v])=>v),
+        backgroundColor: cats.map((_,i)=>cores[i%cores.length]),
+        borderWidth: 2, borderColor: '#fff',
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      cutout: '60%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.label}: ${fmt(ctx.raw)} (${((ctx.raw/total)*100).toFixed(1)}%)`
+          }
+        }
+      }
+    }
+  });
+  setter(c);
+}
+
+function renderCatTabela(elId, cats, cores) {
+  const el = document.getElementById(elId);
+  if (!cats.length) { el.innerHTML = '<div class="empty">Sem dados</div>'; return; }
+  const total = cats.reduce((s,[,v])=>s+v,0);
+
+  el.innerHTML = `<table class="cat-table">
+    <thead><tr><th>Categoria</th><th>Valor</th><th style="width:120px">% do Total</th></tr></thead>
+    <tbody>
+    ${cats.slice(0,8).map(([nome,val],i) => {
+      const pct = total ? ((val/total)*100).toFixed(1) : '0.0';
+      return `<tr>
+        <td>
+          <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${cores[i%cores.length]};margin-right:7px;vertical-align:middle"></span>
+          ${nome}
+        </td>
+        <td class="v-neu">${fmt(val)}</td>
+        <td>
+          <div class="cat-bar-wrap">
+            <div class="cat-bar-bg"><div class="cat-bar" style="width:${pct}%;background:${cores[i%cores.length]}"></div></div>
+            <span class="cat-pct">${pct}%</span>
+          </div>
+        </td>
+      </tr>`;
+    }).join('')}
+    </tbody>
+  </table>`;
+}
+
+// ===========================================
+// TABELAS DETALHADAS
+// ===========================================
+function renderTabela(elId, bdId, lista, tipo) {
+  document.getElementById(bdId).textContent = lista.length;
+  const el = document.getElementById(elId);
+  if (!lista.length) { el.innerHTML = '<div class="empty">Sem registros</div>'; return; }
+
+  const rows = lista.slice(0,20).map(item => {
+    const st   = getStatus(item);
+    const stCls = st === 'RECEBIDO' ? 's-rec' : st === 'PAGO' ? 's-pago' : (diasAtr(getVencimento(item)) > 0 ? 's-atr' : 's-ab');
+    const stLbl = st === 'RECEBIDO' ? 'Recebido' : st === 'PAGO' ? 'Pago' : (diasAtr(getVencimento(item)) > 0 ? 'Atrasado' : 'Em aberto');
+    const nome = getNomeEntidade(item, tipo);
+    const cat  = getCategoria(item);
+    const val  = getValorTitulo(item);
+    const cls  = tipo === 'receber' ? 'v-pos' : 'v-neg';
+    return `<tr>
+      <td>${pillEmp(item._emp)}</td>
+      <td style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${nome}">${nome}</td>
+      <td style="max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11.5px;color:var(--leve)" title="${cat}">${cat}</td>
+      <td>${getVencimento(item)}</td>
+      <td class="${cls}">${fmt(val)}</td>
+      <td><span class="stag ${stCls}">${stLbl}</span></td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = `<table class="dtable">
+    <thead><tr><th>Emp.</th><th>Nome</th><th>Categoria</th><th>Venc.</th><th>Valor</th><th>Status</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>
+  ${lista.length > 20 ? `<div class="more-row">Exibindo 20 de ${lista.length}</div>` : ''}`;
+}
+
+// ===========================================
+// CONTROLES
+// ===========================================
+function setStatus(txt, on) {
+  document.getElementById('statusTxt').textContent = txt;
+  document.getElementById('dot').className = 'dot' + (on ? ' on' : '');
+}
+function setPer(p, btn) {
+  periodo = p;
+  document.querySelectorAll('.pbtn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  carregarDados();
+}
+function setEmp(emp, btn) {
+  empFiltro = emp;
+  document.querySelectorAll('.etab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderDash();
+}
+
+// ===========================================
+// DIAGNÓSTICO
+// ===========================================
+async function rodarDiagnostico() {
+  CFG = getCFG();
+  if (!CFG.LS?.key) { alert('Configure as credenciais primeiro (botão ⚙ Configurar)'); return; }
+
+  const panel = document.getElementById('diagPanel');
+  const conteudo = document.getElementById('diagConteudo');
+  panel.style.display = 'block';
+  conteudo.innerHTML = '<div class="loading"><div class="spinner"></div>Buscando 1 registro de cada empresa para analisar campos...</div>';
+  panel.scrollIntoView({behavior:'smooth', block:'start'});
+
+  const now = new Date();
+  const mes = String(now.getMonth()+1).padStart(2,'0');
+  const ano = now.getFullYear();
+  const de  = `01/${mes}/${ano}`;
+  const ult = new Date(ano, now.getMonth()+1, 0).getDate();
+  const ate = `${ult}/${mes}/${ano}`;
+
+  let html = '';
+
+  for (const empId of ['LS','INOVE','DL']) {
+    html += `<div style="margin-bottom:20px">`;
+    html += `<div style="font-weight:700;font-size:13px;color:var(--verde);margin-bottom:10px;padding:8px 12px;background:var(--bg);border-radius:8px">🏢 ${empId === 'INOVE' ? 'Inove Gôndolas' : empId === 'LS' ? 'LS Gôndolas' : 'DL Indústria'}</div>`;
+
+    // Buscar 1 receber com vencimento
+    for (const [tipo, endpoint, call, listKey, tipoData] of [
+      ['receber (filtro=V)', 'financas/contareceber', 'ListarContasReceber', 'conta_receber_cadastro', 'V'],
+      ['receber (filtro=R)', 'financas/contareceber', 'ListarContasReceber', 'conta_receber_cadastro', 'R'],
+      ['pagar   (filtro=V)', 'financas/contapagar',   'ListarContasPagar',   'conta_pagar_cadastro',   'V'],
+    ]) {
+      try {
+        const r = await omieCall(endpoint, call, {
+          pagina: 1, registros_por_pagina: 1,
+          filtrar_por_data_de: de, filtrar_por_data_ate: ate
+        }, empId);
+
+        if (!r) { html += `<div style="color:var(--danger);font-size:12px;margin-bottom:8px">❌ ${tipo}: sem resposta (credencial inválida?)</div>`; continue; }
+        if (r.faultstring) { html += `<div style="color:var(--danger);font-size:12px;margin-bottom:8px">❌ ${tipo}: ${r.faultstring}</div>`; continue; }
+
+        const total_regs = r.total_de_registros || 0;
+        const total_pags = r.total_de_paginas || 0;
+        const lista = r[listKey] || [];
+
+        html += `<div style="margin-bottom:10px">`;
+        html += `<div style="font-size:12px;font-weight:600;margin-bottom:6px;color:#333">📋 ${tipo} — <span style="color:var(--verde)">${total_regs} registros / ${total_pags} páginas</span></div>`;
+
+        if (lista.length === 0) {
+          html += `<div style="font-size:12px;color:var(--leve);padding:6px 10px;background:var(--bg);border-radius:6px">Nenhum registro encontrado neste período com este filtro de data.</div>`;
+        } else {
+          const item = lista[0];
+          // Mostrar campos de valor e categoria
+          const camposValor = ['valor_documento','valor_parcela','valor_recebido','valor_pago','valor_baixado',
+            'nValorTitulo','nValorRecebido','vr_valor','valor_titulo','valor_liquido'];
+          const camposStatus = ['status_titulo','situacao','cStatus','status'];
+          const camposCategoria = ['categoria','descricao_categoria','codigo_categoria','categorias'];
+          const camposNome = ['nome_cliente','nome_fornecedor','razao_social','cNomeCliente','cFornecedor'];
+          const camposData = ['data_vencimento','data_recebimento','data_pagamento','dDtVencimento','data_competencia'];
+
+          const renderCampos = (titulo, campos, cor) => {
+            let t = `<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:${cor};margin:6px 0 4px">${titulo}</div>`;
+            campos.forEach(c => {
+              const val = item[c];
+              if (val !== undefined && val !== null && val !== '') {
+                t += `<div style="display:flex;gap:8px;font-size:12px;margin-bottom:3px;padding:4px 8px;background:#f8faf8;border-radius:5px">
+                  <span style="font-family:'DM Mono',monospace;color:var(--verde);min-width:160px">${c}</span>
+                  <span style="font-weight:600">${typeof val === 'object' ? JSON.stringify(val) : val}</span>
+                </div>`;
+              }
+            });
+            // Campos extras não mapeados com "valor" ou "cat" no nome
+            Object.entries(item).forEach(([k,v]) => {
+              if (!campos.includes(k) && !camposValor.includes(k) && !camposStatus.includes(k) && !camposCategoria.includes(k) && !camposNome.includes(k) && !camposData.includes(k)) {
+                if ((titulo === 'TODOS OS OUTROS CAMPOS') && v !== undefined && v !== null && v !== '') {
+                  t += `<div style="display:flex;gap:8px;font-size:11px;margin-bottom:2px;padding:3px 8px;background:#f8faf8;border-radius:5px;opacity:.8">
+                    <span style="font-family:'DM Mono',monospace;color:#888;min-width:160px">${k}</span>
+                    <span>${typeof v === 'object' ? JSON.stringify(v).substring(0,80) : String(v).substring(0,80)}</span>
+                  </div>`;
+                }
+              }
+            });
+            return t;
+          };
+
+          html += `<div style="border:1px solid var(--border);border-radius:8px;padding:12px">`;
+          html += renderCampos('💰 CAMPOS DE VALOR', camposValor, '#2A542D');
+          html += renderCampos('📊 CATEGORIA', camposCategoria, '#1d4ed8');
+          html += renderCampos('✅ STATUS', camposStatus, '#d97706');
+          html += renderCampos('👤 NOME', camposNome, '#7c3aed');
+          html += renderCampos('📅 DATAS', camposData, '#0891b2');
+          html += renderCampos('TODOS OS OUTROS CAMPOS', [], '#999');
+          // Outros campos
+          let outros = '';
+          const conhecidos = [...camposValor,...camposStatus,...camposCategoria,...camposNome,...camposData];
+          Object.entries(item).forEach(([k,v]) => {
+            if (!conhecidos.includes(k)) {
+              outros += `<div style="display:flex;gap:8px;font-size:11px;margin-bottom:2px;padding:3px 8px;background:#f8faf8;border-radius:5px;opacity:.75">
+                <span style="font-family:'DM Mono',monospace;color:#999;min-width:160px">${k}</span>
+                <span style="color:#555">${typeof v === 'object' ? JSON.stringify(v).substring(0,100) : String(v).substring(0,100)}</span>
+              </div>`;
+            }
+          });
+          if (outros) {
+            html += `<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#999;margin:6px 0 4px">DEMAIS CAMPOS</div>`;
+            html += outros;
+          }
+          html += `</div>`;
+        }
+        html += `</div>`;
+      } catch(e) {
+        html += `<div style="color:var(--danger);font-size:12px;margin-bottom:8px">❌ ${tipo}: erro — ${e.message}</div>`;
+      }
+    }
+    html += `</div>`;
+  }
+
+  html += `<div style="background:#fff8e1;border:1px solid #ffd54f;border-radius:8px;padding:14px;font-size:13px;color:#5d4037;margin-top:4px">
+    <strong>📋 Como usar este diagnóstico:</strong><br>
+    Tire uma print desta tela e mande para a Fernanda/Aline — os campos <strong style="color:var(--verde)">em verde</strong> são os que têm valor.
+    O campo correto para o valor do título é o que tiver o número maior (ex: 18.500,00).
+  </div>`;
+
+  conteudo.innerHTML = html;
+}
+
+// ===========================================
+// INIT
+// ===========================================
+window.addEventListener('DOMContentLoaded', () => {
+  const now = new Date();
+  document.getElementById('mesInput').value = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
+  CFG = getCFG();
+  if (CFG.LS?.key) carregarDados();
+  else carregarDemo();
+});
+</script>
+</body>
+</html>
