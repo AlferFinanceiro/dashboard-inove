@@ -571,10 +571,11 @@ async function omieCall(endpoint, call, param, empId) {
 
   const body = { call, app_key: creds.key, app_secret: creds.secret, param: [param] };
 
-  const res = await fetch(`https://app.omie.com.br/api/v1/${endpoint}/`, {
+  // Usa proxy /api/omie para evitar bloqueio CORS do navegador
+  const res = await fetch('/api/omie', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
+    body: JSON.stringify({ endpoint, body })
   });
   if (!res.ok) {
     const err = await res.text();
